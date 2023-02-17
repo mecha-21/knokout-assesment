@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Assesment</title>
+    <script src="../knokout-assesment/Scripts/jquery-3.6.3.min.js"></script>
+    <script src="../knokout-assesment/Scripts/knockout-3.5.1.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Maintain Products</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Product Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                data-bind="value: productNumber"
+                id="productNumber"
+                class="number"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Product Description</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                data-bind="value: productName"
+                id="productName"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <label for="exampleInputEmail1" class="form-label"
+              >Active Product ?</label
+            >
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                data-bind="value: activeProduct"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1">Yes</label>
+            </div>
+            <label for="exampleInputEmail1" class="form-label"
+              >Product Class</label
+            >
+            <div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  databind="value: radiobtn1"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Bicycles(100)</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  databind="value: radiobtn2"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Accessories(200)</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  databind="value: radiobtn3"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio3"
+                  value="option3"
+                /><label class="form-check-label" for="inlineRadio3"
+                  >Clothing(300)</label
+                >
+              </div>
+            </div>
+            <label for="exampleInputEmail1" class="form-label"
+              >Unit of measurement</label
+            ><br />
+
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                databind="value: dropdown2"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                Right-aligned, left-aligned lg
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
+              >
+                <li><a class="dropdown-item" href="#">EA</a></li>
+                <li><a class="dropdown-item" href="#">ME</a></li>
+                <li><a class="dropdown-item" href="#">US</a></li>
+              </ul>
+            </div>
+            <div>
+              <label for="exampleInputEmail1" class="form-label"
+                >Suggested Vendor </label
+              ><br />
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle"
+                  databind="value: dropdown3"
+                  data-bs-toggle="dropdown"
+                  data-bs-display="static"
+                  aria-expanded="false"
+                >
+                  Right-aligned, left-aligned lg
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
+                >
+                  <li><a class="dropdown-item" href="#">Acme Supplies</a></li>
+                  <li><a class="dropdown-item" href="#">MM supplies</a></li>
+                  <li><a class="dropdown-item" href="#">Ms Supplies</a></li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" data-bind="click:accept" value="accept" class="btn btn-success mt-5">Accept</button>
+            
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="mt-5">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Weight Per Unit of measure
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  data-bind="value: weight"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >List Price
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  data-bind="value:listprice"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Country of origin</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  data-bind="value:countryoforigin"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Lastest Revision Date</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  data-bind="value:latestrevisiondate"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <label for="exampleInputEmail1" class="form-label"
+                >Long Description </label
+              ><br />
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  data-bind="value:longdescription"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready (function(){
+        //viewmodel
+        var product = {
+            productNumber: ko.observable(""),
+            productName: ko.observable(""),
+            activeProduct: ko.observable(""),
+            radiobtn3: ko.observable(""),
+            dropdown2: ko.observablearray(["EA","ME","US"]),
+            dropdown2: ko.observablearray(["Acme Supplies","MM supplies","Ms Supplies"]),
+            weight: ko.observable(""),
+            listprice : ko.observable(""),
+            countryoforigin: ko.observable(""),
+            latestrevisiondate: ko.observable(""),
+            longdescription: ko.observable("")
+           };
+           product.accept = function(){
+            const jsonData = ko.toJSON(employee);
+                const promise = fetch("http://localhost:3000/employees", {
+                    method: 'post',
+                    body: jsonData,
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                });
+           }
+    }</script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
