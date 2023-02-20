@@ -225,9 +225,9 @@
             productNumber: ko.observable(""),
             productName: ko.observable(""),
             activeProduct: ko.observable(""),
-            radiobtn3: ko.observable(""),
-            dropdown2: ko.observablearray(["EA","ME","US"]),
-            dropdown2: ko.observablearray(["Acme Supplies","MM supplies","Ms Supplies"]),
+            radiobtn1: ko.observable(""),
+            radiobtn2: ko.observablearray(["EA","ME","US"]),
+            radiobtn3: ko.observablearray(["Acme Supplies","MM supplies","Ms Supplies"]),
             weight: ko.observable(""),
             listprice : ko.observable(""),
             countryoforigin: ko.observable(""),
@@ -236,15 +236,24 @@
            };
            product.accept = function(){
             const jsonData = ko.toJSON(product);
-                const promise = fetch("http://localhost:3000/posts", {
+                const promise = fetch("http://localhost:3000/product", {
                     method: 'post',
                     body: jsonData,
                     headers: {
                         'content-type': 'application/json'
                     }
                 });
-           }
-    })</script>
+                promise.then(function(data){
+                    //alert('success');
+                    product.details("success")
+                    console.log(data);
+
+                })
+                $("#result").text(jsonData);
+           };
+           ko.applyBindings(product);
+        });
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
